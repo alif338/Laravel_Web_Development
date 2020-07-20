@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h1>Buat Account Baru!</h1>
+    <h3>Sign Up Form</h3>
+    <form>
+        <label for="firstn">First Name:</label><br>
+        <input type="text" id="firstn"><br>
+        <label for="lastn">Last Name:</label><br>
+        <input type="text" id="lastn"><br><br>
+    </form>
+    <form>
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+    </form>
+    <form>
+        <label for="nation">Nationality:</label><br>
+        <select type="dropdown">
+                            <option value="America">America</option>
+                            <option value="Arabian">Arabian</option>
+                            <option value="Brtish">British</option>
+                            <option value="Indonesian" selected>Indonesian</option>
+                     </select><br><br>
+
+    </form>
+    <form>
+        Language : <br/>
+        <input type="checkbox" name="Bahasa Indonesia" value="on">Bahasa Indonesia<br>
+        <input type="checkbox" name="English" value="on">English<br>
+        <input type="checkbox" name="Other" value="on">Other<br><br>
+
+    </form>
+    <form>
+        Bio: <br/>
+        <textarea row="20" cols="15" name="bio">
+                     </textarea>
+    </form>
+    <form action="welcome.html">
+        <input type="submit" name="Sign Up" value="Sign Up">
+    </form>
+</body>
+
+</html>
