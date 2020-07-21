@@ -1,0 +1,60 @@
+.fixed-header {
+    overflow: visible;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.photo {
+    float: left;
+}
+
+.fixed-header li {
+    float: right;
+    margin-right: 38px;
+    display: block;
+    text-align: center;
+    padding: 6px 11px;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+body {
+    background-image: url("pattern.jpg");
+    margin: 0;
+}
+
+h5 {
+    color: white;
+    font-size: 14px;
+}
+
+section {
+    margin-top: 90px;
+    margin-left: 200px;
+    margin-right: 200px;
+    background: white;
+    padding-top: 1px;
+}
+
+hr {
+    margin: 4px;
+}
+
+article {
+    margin-left: 10px;
+    padding-top: 15px;
+    border-bottom: 44px black;
+    width: 100%;
+}
+
+.footers {
+    padding: 5px;
+    background: black;
+    margin-bottom: 0%;
+    margin: 4px;
+    text-emphasis-color: white;
+}
