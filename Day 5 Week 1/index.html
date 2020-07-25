@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Latihan DOM</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.8.1/js/all.js" integrity="sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand">Mini Ecommerce</a>
+            <form class="form-inline" id="formItem">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" id="keyword" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit" id="searchItem">Search</button>
+            </form>
+            <button class="btn btn-primary" id="cart" onclick="uncount()"><i class="fas fa-shopping-cart"></i>(0)</button>
+        </nav>
+        <div class="row" id="shop">
+
+        </div>
+    </div>
+    <script>
+        var items = [
+            ['Keyboard Logitek', 'Rp 60.000,00', 'Keyboard yang mantap untuk kantoran', 'logitek.jpg', 'keyboard'],
+            ['Keyboard MSI', 'Rp 300.000,00', 'Keyboard gaming MSI mekanik', 'msi.jpg', 'keyboard'],
+            ['Mouse Genius', 'Rp 50.000,00', 'Mouse Genius biar lebih pinter', 'genius.jpeg', 'mouse'],
+            ['Mouse Jerry', 'Rp 30.000,00', 'Mouse yang disukai kucing', 'jerry.jpg', 'mouse']
+        ]
+        var init = 0
+
+        function printItem(array) {
+            var content = ""
+
+            for (var i = 0; i < array.length; i++) {
+
+                content += `<div id="${array[i][4]}" class="col-md-4 mt-2">
+              <div class="card" style="width: 18rem;">
+                  <img src="${array[i][3]}" class="card-img-top img-fluid" alt="keyboard">
+                  <div class="card-body">
+                      <h5 class="card-title" id="itemName">${array[i][0]}</h5>
+                      <p class="card-text" id="itemDesc">${array[i][2]}</p>
+                      <p class="card-text">${array[i][1]}</p>
+                      <a href="#" onclick="count()" class="btn btn-primary" id="addCart">Add to cart</a>
+                  </div>
+              </div>
+            </div>`
+            }
+            document.getElementById("shop").innerHTML = content
+
+        }
+        printItem(items)
+
+        function filtered(arr) {
+            var filteredItems = []
+            for (var p = 0; p < items.length; p++) {
+                var arr1 = arr.toLowerCase()
+                var ItemLowCase = items[p][0].toLowerCase()
+                if (ItemLowCase.includes(arr1)) {
+                    filteredItems.push(items[p])
+                }
+            }
+            return filteredItems
+        }
+        var search = document.getElementById("formItem")
+        search.addEventListener("submit", function(p) {
+            p.preventDefault()
+            var text = document.getElementById("keyword").value
+            var out = filtered(text)
+            printItem(out)
+        })
+
+        function count() {
+            if (init < 0) {
+                init = 0
+                init += 1
+            } else {
+                init += 1
+            }
+            document.getElementById("cart").innerHTML = '<i class="fas fa-shopping-cart">   </i>' + "(" +
+                init + ")"
+        }
+
+        function uncount() {
+            init -= 1
+            if (init < 0) {
+                document.getElementById("cart").innerHTML = '<i class="fas fa-shopping-cart">   </i>' + "(" +
+                    0 + ")"
+            } else {
+                document.getElementById("cart").innerHTML = '<i class="fas fa-shopping-cart">   </i>' + "(" +
+                    init + ")"
+            }
+        }
+    </script>
+</body>
+
+</html>
