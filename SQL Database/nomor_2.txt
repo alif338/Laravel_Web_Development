@@ -1,0 +1,7 @@
+use myshop;
+
+CREATE TABLE users(id INT AUTO_INCREMENT PRIMARY KEY, nama VARCHAR(255), email VARCHAR(255), password VARCHAR(255));
+
+CREATE TABLE items (id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), price INT, stock INT, category_id INT, CONSTRAINT fk_items_categories FOREIGN KEY (id) REFERENCES categories (id));
+
+CREATE TABLE categories(id INT AUTO_INCREMENT PRIMARY KEY, name VARCHAR(255));

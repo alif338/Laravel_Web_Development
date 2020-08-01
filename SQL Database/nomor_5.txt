@@ -1,0 +1,1 @@
+UPDATE items SET price = 2500000 WHERE name = 'Sumsang b50';

@@ -1,0 +1,8 @@
+SELECT id, nama, email FROM users;
+
+SELECT * FROM items WHERE price > 1000000;
+SELECT * FROM items WHERE name LIKE '%Uniklo%';
+SELECT * FROM items WHERE name LIKE '%watch%';
+SELECT * FROM items WHERE name LIKE '%sang%';
+
+ SELECT items.id, name,description,price,stock,category_id, kategori FROM items LEFT JOIN categories ON items.category_id = categories.id;
